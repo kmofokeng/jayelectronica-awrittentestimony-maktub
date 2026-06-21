@@ -9,272 +9,211 @@
 
 <style>
 body{
-  margin:0;
-  background:#050505;
+  background:#070707;
   color:#EDEDED;
   font-family: ui-sans-serif, system-ui;
   overflow-x:hidden;
 }
 
-/* ambient grain */
+/* subtle cinematic grain */
 body:before{
   content:"";
   position:fixed;
   inset:0;
-  background:url('https://grainy-gradients.vercel.app/noise.svg');
-  opacity:0.05;
+  background:radial-gradient(circle at 20% 20%, rgba(197,168,128,0.08), transparent 40%),
+             radial-gradient(circle at 80% 60%, rgba(255,255,255,0.04), transparent 50%);
   pointer-events:none;
-}
-
-/* watermark ritual band */
-.watermark{
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  opacity:0.03;
-  transform:rotate(-30deg);
-  font-size:18px;
-  letter-spacing:3px;
-  white-space:nowrap;
-  z-index:999;
 }
 
 .gold{ color:#C5A880; }
-.muted{ color:#A0A0A0; }
 
-.section{
-  padding:80px 20px;
-  max-width:1100px;
+.container{
+  max-width:1200px;
   margin:auto;
+  padding:80px 24px;
 }
 
-.hr{
-  height:1px;
-  background:linear-gradient(90deg,transparent,#C5A88055,transparent);
-  margin:40px 0;
+/* HERO */
+.hero{
+  height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align:center;
 }
 
-.card{
-  border:1px solid rgba(197,168,128,0.15);
-  background:rgba(255,255,255,0.02);
-  backdrop-filter: blur(10px);
-  padding:24px;
+.title{
+  font-size:64px;
+  font-weight:200;
+  letter-spacing:2px;
 }
 
-.act-title{
+.subtitle{
+  opacity:0.6;
+  margin-top:16px;
+}
+
+/* MANIFESTO */
+.manifesto{
+  max-width:800px;
+  margin:auto;
+  line-height:1.9;
+  font-size:15px;
+  opacity:0.85;
+}
+
+/* ACT SYSTEM */
+.act{
+  margin-top:120px;
+}
+
+.act-header{
   font-size:11px;
-  letter-spacing:4px;
+  letter-spacing:6px;
   color:#C5A880;
+  margin-bottom:30px;
 }
 
-.track-title{
-  font-size:22px;
+/* TRACK CARD */
+.track{
+  border-top:1px solid rgba(197,168,128,0.15);
+  padding:40px 0;
+  display:grid;
+  grid-template-columns: 1fr 2fr;
+  gap:40px;
+}
+
+.track h3{
+  font-size:28px;
   font-weight:300;
 }
 
 .quote{
   font-style:italic;
-  opacity:0.7;
+  opacity:0.6;
   margin:10px 0;
 }
 
-.album-art{
-  width:100%;
-  height:420px;
-  border:1px dashed rgba(197,168,128,0.4);
+/* AUDIO BAR */
+.player{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:#0B0B0B;
+  border-top:1px solid rgba(197,168,128,0.2);
+  padding:14px 20px;
   display:flex;
   align-items:center;
-  justify-content:center;
-  color:#777;
+  gap:20px;
 }
 
 button{
-  border:1px solid rgba(197,168,128,0.3);
-  padding:8px 14px;
-  margin:4px;
   background:transparent;
-  color:#EDEDED;
+  border:1px solid rgba(197,168,128,0.3);
+  color:#fff;
+  padding:6px 12px;
   cursor:pointer;
 }
-button:hover{ border-color:#C5A880; }
+
+button:hover{
+  border-color:#C5A880;
+}
 </style>
 </head>
 
 <body>
 
-<div class="watermark">
-PRIVATE ARCHIVE — A WRITTEN TESTIMONY — MAKTUB — Z3 PRODUCTIONS —
-</div>
-
 <!-- HERO -->
-<div class="section text-center">
-  <div class="muted tracking-[6px] text-xs">CONFIDENTIAL CREATIVE PRESENTATION</div>
-  <h1 class="text-5xl mt-6 font-light">
-    A Written Testimony: <span class="gold">MAKTUB</span>
-  </h1>
-  <p class="mt-6 muted">
-    Jay Electronica × Perfektionist × Z3 Productions
-  </p>
-</div>
-
-<div class="hr"></div>
+<section class="hero">
+  <div class="gold text-xs tracking-[6px]">CONFIDENTIAL PRESENTATION</div>
+  <div class="title">A Written Testimony: <span class="gold">MAKTUB</span></div>
+  <div class="subtitle">Jay Electronica × Perfektionist × Z3 Productions</div>
+</section>
 
 <!-- MANIFESTO -->
-<div class="section card">
-
-<h2 class="gold text-lg mb-6">THE MANIFESTO</h2>
+<section class="container">
+<div class="manifesto">
 
 <p>
-"A Written Testimony: MAKTUB is a sonic pilgrimage across the Atlantic — a dialogue between the descendants of the transatlantic divide, bound by shared struggle, divine purpose, and ancestral memory. Inspired by Minister Louis Farrakhan’s visits to South Africa in 1996 and 1998, the album imagines the ocean as both a wound and a bridge — carrying not just the ghosts of the past, but the echoes of resistance, faith, and rebirth."
+“A Written Testimony: MAKTUB is a sonic pilgrimage across the Atlantic — a dialogue between the descendants of the transatlantic divide, bound by shared struggle, divine purpose, and ancestral memory...
 </p>
 
 <br/>
 
 <p>
-In 1996, Farrakhan’s meeting with President Nelson Mandela symbolized a convergence of two spiritual lineages of liberation: one born in Montgomery and Harlem, the other in Soweto and Robben Island. Mandela’s vision of non-racism, non-sexism, and religious tolerance reflected a new dawn; Farrakhan’s fire reminded the world that freedom without truth remains incomplete.
+Inspired by Minister Louis Farrakhan’s visits to South Africa in 1996 and 1998...
 </p>
 
 <br/>
 
 <p>
-Two years later, in 1998, when he returned to defend Winnie Madikizela-Mandela — calling her “the mother of a great struggle” — he affirmed the feminine divine within resistance, the matriarchal strength that sustains revolutions across oceans.
-</p>
-
-<br/>
-
-<p>
-Through this lens, MAKTUB becomes both testimony and prophecy.
-</p>
-
-<br/>
-
-<p class="gold">
-<strong>ACT I — THE DESCENT</strong><br/>
-<strong>ACT II — THE PILGRIMAGE</strong><br/>
-<strong>ACT III — THE REVELATION</strong>
-</p>
-
-<br/>
-
-<p>
-It is written — that Black struggle, whether in the streets of Chicago or the townships of Johannesburg, flows from one spiritual current. It is written — that the voices silenced by oppression will find rhythm in new tongues. And it is written — that even when separated by distance, the diaspora speaks one language: the language of faith, resistance, and transcendence.
+<strong class="gold">ACT I — THE DESCENT</strong><br/>
+<strong class="gold">ACT II — THE PILGRIMAGE</strong><br/>
+<strong class="gold">ACT III — THE REVELATION</strong>
 </p>
 
 </div>
+</section>
 
-<div class="hr"></div>
+<!-- ACTS -->
+<section class="container">
 
-<!-- TRACK FILTER -->
-<div class="section text-center">
-<button onclick="filter('all')">ALL</button>
-<button onclick="filter('descent')">DESCENT</button>
-<button onclick="filter('pilgrimage')">PILGRIMAGE</button>
-<button onclick="filter('revelation')">REVELATION</button>
+<div class="act">
+<div class="act-header">ACT I — THE DESCENT</div>
+
+<div class="track">
+<div>
+<h3>Stroll Through the Dark</h3>
+<div class="quote">Before the light, there’s always the walk through shadow.</div>
+<button onclick="play('audio1.mp3','Stroll Through the Dark')">Play</button>
 </div>
-
-<!-- TRACKS -->
-<div id="tracks" class="section grid gap-8"></div>
-
-<div class="hr"></div>
-
-<!-- ALBUM ART -->
-<div class="section card">
-<h2 class="gold mb-6">ALBUM ART (PLACEHOLDER)</h2>
-<div class="album-art">
-  PRIMARY VISUAL IDENTITY — MAKTUB COVER ART PENDING
+<div>
+Every journey begins in shadow. A descent into unknowing before revelation.
 </div>
 </div>
 
-<!-- ARTWORK SHOWCASE -->
-<div class="section card">
-<h2 class="gold mb-6">ARTWORK ASSETS SHOWCASE</h2>
-<div class="grid md:grid-cols-3 gap-4 text-sm muted">
-  <div>Desert-to-City Duality Visual System</div>
-  <div>Africa ↔ America Ancestral Bridge Motifs</div>
-  <div>Prophetic Typography System (Scripture Layering)</div>
-  <div>Black Quantum Symbolism Frames</div>
-  <div>5% Nation Geometry Encoding System</div>
-  <div>Mandela / Farrakhan Historical Memory Layers</div>
+<div class="track">
+<div>
+<h3>Wrong Turn</h3>
+<div class="quote">Every detour is a lesson in disguise.</div>
+<button onclick="play('audio2.mp3','Wrong Turn')">Play</button>
+</div>
+<div>
+Even deviation becomes divine instruction.
 </div>
 </div>
 
-<!-- DOCUMENTARY -->
-<div class="section card">
-<h2 class="gold mb-6">DOCUMENTARY & VISUAL ASSETS TRACK</h2>
-<div class="muted">
-A cinematic archive chronicling the transatlantic creative synthesis between Johannesburg and New Orleans.
-<br/><br/>
-Includes:
-<br/>• Studio ritual sessions  
-<br/>• Field recordings in Soweto  
-<br/>• New Orleans second-line procession influence studies  
-<br/>• Spoken word scripture construction sessions  
+<div class="track">
+<div>
+<h3>A Thousand Deaths</h3>
+<div class="quote">To rise, you must die a thousand times.</div>
+<button onclick="play('audio3.mp3','A Thousand Deaths')">Play</button>
+</div>
+<div>
+Ego dissolution through cycles of spiritual rebirth.
 </div>
 </div>
 
-<!-- VINYL -->
-<div class="section card">
-<h2 class="gold mb-6">VINYL PRESENTATION & PHYSICAL MOCKUPS</h2>
-<div class="grid md:grid-cols-3 gap-4 muted">
-  <div>Black Matte Gatefold with Gold Emboss Script</div>
-  <div>Etched Vinyl Side B Symbolic Encoding</div>
-  <div>Collector Archive Box (Locked Edition)</div>
-</div>
 </div>
 
-<!-- PR -->
-<div class="section card">
-<h2 class="gold mb-6">STRATEGIC PR PARTNERSHIPS</h2>
-<div class="grid md:grid-cols-2 gap-4 muted">
-  <div>Pan-African Cultural Institutions</div>
-  <div>Black Intellectual & Diaspora Media Networks</div>
-  <div>High Fashion Editorial Houses (Avant-Garde Circuits)</div>
-  <div>Philosophy / Theology / Music Cross-Publications</div>
-  <div>Luxury Vinyl Collectors & Archive Communities</div>
-  <div>Global Hip Hop Cultural Archives</div>
-</div>
-</div>
+</section>
 
-<!-- FOOTER -->
-<div class="section text-xs muted border-t border-[#C5A88033]">
-Classification: Confidential Creative Development Presentation<br/>
-Company: Z3 Productions<br/>
-Genre: Hip Hop; Rap<br/>
-Contact: Kamohelo2003@yahoo.com | +27847530671
+<!-- PLAYER -->
+<div class="player">
+  <div id="nowPlaying">Nothing Playing</div>
+  <audio id="audio" controls></audio>
 </div>
 
 <script>
-const data = [
-{act:"descent", title:"Stroll Through the Dark", quote:"Before the light, there’s always the walk through shadow.", desc:"Every journey begins in shadow. A descent into spiritual unknowing."},
-{act:"descent", title:"Wrong Turn", quote:"Every detour is a lesson in disguise.", desc:"Error as divine instruction."},
-{act:"descent", title:"A Thousand Deaths", quote:"To rise, you must die a thousand times.", desc:"Ego dissolution through spiritual cycles."},
-{act:"pilgrimage", title:"One Path", quote:"When destiny calls, all other roads vanish.", desc:"Singular divine alignment."},
-{act:"pilgrimage", title:"Fleeting Moments", quote:"Gratitude is the memory of the soul.", desc:"Impermanence as teacher."},
-{act:"pilgrimage", title:"Space Odyssey", quote:"Liberation isn’t bound to earth; it’s cosmic.", desc:"Cosmic Black consciousness expansion."},
-{act:"revelation", title:"Dialogue with the Gods", quote:"Sometimes revelation speaks in silence.", desc:"Conduit state transmission."},
-{act:"revelation", title:"Not for the Faint-Hearted", quote:"Truth demands the discipline of warriors.", desc:"Spiritual warfare discipline."},
-{act:"revelation", title:"Arrivederci", quote:"Every farewell is a quiet form of freedom.", desc:"Ego death closure."},
-{act:"revelation", title:"Oasis of Life", quote:"After the desert comes the bloom.", desc:"Return to divine equilibrium."}
-];
+const audio = document.getElementById("audio");
+const now = document.getElementById("nowPlaying");
 
-function render(filter){
-  const el = document.getElementById("tracks");
-  el.innerHTML = "";
-  data.filter(t => filter==="all" || t.act===filter)
-  .forEach(t=>{
-    el.innerHTML += `
-      <div class="card">
-        <div class="act-title">${t.act.toUpperCase()}</div>
-        <div class="track-title mt-2">${t.title}</div>
-        <div class="quote">${t.quote}</div>
-        <div class="muted text-sm">${t.desc}</div>
-      </div>
-    `;
-  });
+function play(src,title){
+  audio.src = src;
+  audio.play();
+  now.innerText = "Now Playing: " + title;
 }
-
-function filter(f){ render(f); }
-render("all");
 </script>
 
 </body>
