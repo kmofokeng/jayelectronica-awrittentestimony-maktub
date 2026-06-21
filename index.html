@@ -14,15 +14,30 @@ body{
   color:#EDEDED;
   font-family: ui-sans-serif, system-ui;
   overflow-x:hidden;
+  user-select:none;
 }
 
-/* cinematic grain */
+/* cinematic grain + atmosphere */
 body:before{
   content:"";
   position:fixed;
   inset:0;
-  background: radial-gradient(circle at 20% 10%, rgba(197,168,128,0.08), transparent 40%),
-              radial-gradient(circle at 80% 60%, rgba(255,255,255,0.04), transparent 50%);
+  background:
+    radial-gradient(circle at 20% 10%, rgba(197,168,128,0.10), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.05), transparent 50%);
+  pointer-events:none;
+}
+
+/* watermark layer */
+.watermark{
+  position:fixed;
+  inset:-200px;
+  transform:rotate(-28deg);
+  opacity:0.03;
+  font-size:18px;
+  letter-spacing:3px;
+  white-space:nowrap;
+  z-index:9999;
   pointer-events:none;
 }
 
@@ -37,7 +52,7 @@ body:before{
 
 /* HERO */
 .hero{
-  height:85vh;
+  height:90vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -45,30 +60,26 @@ body:before{
 }
 
 .title{
-  font-size:64px;
+  font-size:66px;
   font-weight:200;
+  letter-spacing:1px;
 }
 
 .subtitle{
+  margin-top:16px;
   opacity:0.6;
-  margin-top:14px;
-  letter-spacing:1px;
 }
 
 /* MANIFESTO */
 .manifesto{
-  max-width:820px;
+  max-width:850px;
   margin:auto;
   line-height:1.9;
   font-size:15px;
-  opacity:0.85;
+  opacity:0.9;
 }
 
-/* ACT SECTION */
-.act{
-  margin-top:120px;
-}
-
+/* ACTS */
 .act-title{
   font-size:11px;
   letter-spacing:6px;
@@ -76,7 +87,6 @@ body:before{
   margin-bottom:40px;
 }
 
-/* TRACK */
 .track{
   border-top:1px solid rgba(197,168,128,0.15);
   padding:40px 0;
@@ -96,11 +106,11 @@ body:before{
   margin:10px 0;
 }
 
-/* BUTTON */
+/* AUDIO */
 button{
   background:transparent;
   border:1px solid rgba(197,168,128,0.35);
-  color:#fff;
+  color:white;
   padding:6px 14px;
   cursor:pointer;
   margin-top:10px;
@@ -116,207 +126,221 @@ button:hover{
   left:0;
   right:0;
   background:#0B0B0B;
-  border-top:1px solid rgba(197,168,128,0.2);
+  border-top:1px solid rgba(197,168,128,0.25);
   padding:12px 18px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  z-index:999;
+  align-items:center;
+  z-index:10000;
 }
 
-audio{
-  width:60%;
-}
+audio{ width:60%; }
 
-.small{
-  font-size:12px;
-  opacity:0.7;
+/* PRINT BLOCK */
+@media print{
+  body{ display:none !important; }
 }
 </style>
 </head>
 
 <body>
 
+<!-- SECURITY WATERMARK -->
+<div class="watermark">
+PRIVATE PRESENTATION — UNAUTHORIZED DISTRIBUTION PROHIBITED —
+PRIVATE PRESENTATION — UNAUTHORIZED DISTRIBUTION PROHIBITED —
+</div>
+
 <!-- HERO -->
 <section class="hero">
-  <div class="gold text-xs tracking-[6px]">CONFIDENTIAL CREATIVE DEVELOPMENT</div>
-  <div class="title">A Written Testimony: <span class="gold">MAKTUB</span></div>
-  <div class="subtitle">Jay Electronica × Perfektionist × Z3 Productions</div>
+  <div class="gold text-xs tracking-[6px]">
+    CONFIDENTIAL CREATIVE DEVELOPMENT PRESENTATION
+  </div>
+
+  <div class="title">
+    A Written Testimony: <span class="gold">MAKTUB</span>
+  </div>
+
+  <div class="subtitle">
+    Jay Electronica × Perfektionist × Z3 Productions
+  </div>
 </section>
 
 <!-- MANIFESTO -->
 <section class="container">
+
 <div class="manifesto">
 
+<h2 class="gold text-lg mb-8">THE MANIFESTO</h2>
+
 <p>
-“A Written Testimony: MAKTUB is a sonic pilgrimage across the Atlantic — a dialogue between the descendants of the transatlantic divide, bound by shared struggle, divine purpose, and ancestral memory. Inspired by Minister Louis Farrakhan’s visits to South Africa in 1996 and 1998, the album imagines the ocean as both a wound and a bridge — carrying not just the ghosts of the past, but the echoes of resistance, faith, and rebirth.”
+"A Written Testimony: MAKTUB is a sonic pilgrimage across the Atlantic — a dialogue between the descendants of the transatlantic divide, bound by shared struggle, divine purpose, and ancestral memory. Inspired by Minister Louis Farrakhan’s visits to South Africa in 1996 and 1998, the album imagines the ocean as both a wound and a bridge — carrying not just the ghosts of the past, but the echoes of resistance, faith, and rebirth."
 </p>
 
 <br/>
 
 <p>
-In 1996, Farrakhan’s meeting with President Nelson Mandela symbolized a convergence of two spiritual lineages of liberation: one born in Montgomery and Harlem, the other in Soweto and Robben Island.
+In 1996, Farrakhan’s meeting with President Nelson Mandela symbolized a convergence of two spiritual lineages of liberation: one born in Montgomery and Harlem, the other in Soweto and Robben Island. Mandela’s vision of non-racism, non-sexism, and religious tolerance reflected a new dawn; Farrakhan’s fire reminded the world that freedom without truth remains incomplete.
 </p>
 
 <br/>
 
 <p>
-<strong class="gold">ACT I — THE DESCENT</strong><br/>
-<strong class="gold">ACT II — THE PILGRIMAGE</strong><br/>
-<strong class="gold">ACT III — THE REVELATION</strong>
+Two years later, in 1998, when he returned to defend Winnie Madikizela-Mandela — calling her “the mother of a great struggle” — he affirmed the feminine divine within resistance, the matriarchal strength that sustains revolutions across oceans.
+</p>
+
+<br/>
+
+<p>
+Through this lens, MAKTUB becomes both testimony and prophecy.
+</p>
+
+<br/>
+
+<p class="gold">
+<strong>ACT I — THE DESCENT</strong><br/>
+<strong>ACT II — THE PILGRIMAGE</strong><br/>
+<strong>ACT III — THE REVELATION</strong>
+</p>
+
+<br/>
+
+<p>
+It is written — that Black struggle, whether in the streets of Chicago or the townships of Johannesburg, flows from one spiritual current. It is written — that the voices silenced by oppression will find rhythm in new tongues. And it is written — that even when separated by distance, the diaspora speaks one language: the language of faith, resistance, and transcendence.
 </p>
 
 </div>
 </section>
 
 <!-- ACT I -->
-<section class="container act">
+<section class="container">
 <div class="act-title">ACT I — THE DESCENT</div>
 
 <div class="track">
 <div>
 <h3>Stroll Through the Dark</h3>
 <div class="quote">Before the light, there’s always the walk through shadow.</div>
-<button onclick="play('audio/track1.mp3','Stroll Through the Dark')">Play</button>
+<button onclick="play('audio/1.mp3','Stroll Through the Dark')">Play</button>
 </div>
-<div>Every journey begins in shadow. The descent into spiritual unknowing.</div>
+<div>
+Every journey begins in shadow. Stroll Through the Dark opens the album like a whispered prayer from the abyss; the moment before light breaks through. The beat feels submerged, laced with echoes of Johannesburg night markets and New Orleans backstreets. Jay speaks of spiritual blindness, fear, and the courage to keep walking when no map exists. It is the descent into the self; necessary before any ascension.
+</div>
 </div>
 
 <div class="track">
 <div>
 <h3>Wrong Turn</h3>
 <div class="quote">Every detour is a lesson in disguise.</div>
-<button onclick="play('audio/track2.mp3','Wrong Turn')">Play</button>
+<button onclick="play('audio/2.mp3','Wrong Turn')">Play</button>
 </div>
-<div>Deviation becomes divine instruction in disguise.</div>
+<div>
+Temptation speaks in familiar voices. Wrong Turn is that detour we all take: the pursuit of power, fame, or validation that leads us away from truth. The production is fragmented, pulsing with dissonant drums and reversed samples. Yet even in error, destiny is at work. Even the wrong road leads to the right gate if faith does not fade.
+</div>
 </div>
 
 <div class="track">
 <div>
 <h3>A Thousand Deaths</h3>
 <div class="quote">To rise, you must die a thousand times.</div>
-<button onclick="play('audio/track3.mp3','A Thousand Deaths')">Play</button>
+<button onclick="play('audio/3.mp3','A Thousand Deaths')">Play</button>
 </div>
-<div>Ego death as repetition of spiritual rebirth cycles.</div>
+<div>
+This track captures ego dissolution. The deaths we endure before rebirth. Drawing from African ancestral chants and Nation of Islam philosophical echoes, it explores destruction and renewal as a sacred cycle. Each bar is a shedding. Each breath is a funeral of the former self.
+</div>
 </div>
 </section>
 
 <!-- ACT II -->
-<section class="container act">
+<section class="container">
 <div class="act-title">ACT II — THE PILGRIMAGE</div>
 
 <div class="track">
 <div>
 <h3>One Path</h3>
 <div class="quote">When destiny calls, all other roads vanish.</div>
-<button onclick="play('audio/track4.mp3','One Path')">Play</button>
+<button onclick="play('audio/4.mp3','One Path')">Play</button>
 </div>
-<div>Singular alignment with divine order and remembrance.</div>
+<div>
+After chaos comes clarity. One Path represents divine alignment — the realization that all experiences converge into a single ordained direction. The rhythm mirrors footsteps across desert terrain. Purpose is not discovered; it is remembered.
+</div>
 </div>
 
 <div class="track">
 <div>
 <h3>Fleeting Moments</h3>
 <div class="quote">Gratitude is the memory of the soul.</div>
-<button onclick="play('audio/track5.mp3','Fleeting Moments')">Play</button>
+<button onclick="play('audio/5.mp3','Fleeting Moments')">Play</button>
 </div>
-<div>Impermanence as sacred instruction in gratitude.</div>
+<div>
+Life passes in fragments. Fleeting Moments slows time, honoring impermanence. It is a letter to the fallen, the forgotten, and the future self. Even forever is temporary when seen through divine time.
+</div>
 </div>
 
 <div class="track">
 <div>
 <h3>Space Odyssey</h3>
 <div class="quote">Liberation isn’t bound to earth; it’s cosmic.</div>
-<button onclick="play('audio/track6.mp3','Space Odyssey')">Play</button>
+<button onclick="play('audio/6.mp3','Space Odyssey')">Play</button>
 </div>
-<div>Cosmic Black consciousness expansion beyond earth-bound limits.</div>
+<div>
+A cosmic expansion of Black consciousness. Space Odyssey transcends geography, reframing liberation as interstellar. It merges township rhythm with cosmic jazz abstraction. The struggle continues beyond Earth.
+</div>
 </div>
 </section>
 
 <!-- ACT III -->
-<section class="container act">
+<section class="container">
 <div class="act-title">ACT III — THE REVELATION</div>
 
 <div class="track">
 <div>
 <h3>Dialogue with the Gods</h3>
 <div class="quote">Sometimes revelation speaks in silence.</div>
-<button onclick="play('audio/track7.mp3','Dialogue with the Gods')">Play</button>
+<button onclick="play('audio/7.mp3','Dialogue with the Gods')">Play</button>
 </div>
-<div>Conduit transmission between ancestral and divine realms.</div>
+<div>
+The veil dissolves. Jay becomes conduit, not narrator. This is communion with unseen intelligences, ancestral frequency, and divine instruction. Revelation arrives in silence, not spectacle.
+</div>
 </div>
 
 <div class="track">
 <div>
 <h3>Not for the Faint-Hearted</h3>
 <div class="quote">Truth demands the discipline of warriors.</div>
-<button onclick="play('audio/track8.mp3','Not for the Faint-Hearted')">Play</button>
+<button onclick="play('audio/8.mp3','Not for the Faint-Hearted')">Play</button>
 </div>
-<div>Spiritual discipline as warfare and endurance.</div>
+<div>
+Truth requires endurance. This is spiritual warfare — discipline, sacrifice, and confrontation with self. To know is to suffer. To rise is to burn.
+</div>
 </div>
 
 <div class="track">
 <div>
-<h3>Arrivederci (So Long, Goodbye...)</h3>
+<h3>Arrivederci (So Long, Goodbye...)</div>
 <div class="quote">Every farewell is a quiet form of freedom.</div>
-<button onclick="play('audio/track9.mp3','Arrivederci')">Play</button>
+<button onclick="play('audio/9.mp3','Arrivederci')">Play</button>
 </div>
-<div>Ego dissolution through graceful farewell to illusion.</div>
+<div>
+The ego dissolves gracefully. This is farewell to illusion, false identity, and spiritual confinement. Goodbye is not loss — it is liberation.
+</div>
 </div>
 
 <div class="track">
 <div>
 <h3>Oasis of Life</h3>
 <div class="quote">After the desert comes the bloom.</div>
-<button onclick="play('audio/track10.mp3','Oasis of Life')">Play</button>
+<button onclick="play('audio/10.mp3','Oasis of Life')">Play</button>
 </div>
-<div>Return to divine equilibrium — the written fulfillment.</div>
+<div>
+Completion. Return. The desert blooms. MAKTUB is fulfilled — it was written. The journey ends where it began, transformed.
 </div>
-</section>
+</div>
 
-<!-- ALBUM ART -->
-<section class="container">
-<div class="act-title">ALBUM ART</div>
-<div style="height:420px;border:1px dashed rgba(197,168,128,0.4);display:flex;align-items:center;justify-content:center;">
-PRIMARY VISUAL IDENTITY — MAKTUB (PLACEHOLDER)
-</div>
-</section>
-
-<!-- ASSETS -->
-<section class="container">
-<div class="act-title">ARTWORK ASSETS SHOWCASE</div>
-<div class="muted">
-Diaspora visual system: Africa ↔ America symbolic bridge architecture, prophetic typography layers, desert-to-cosmos visual transition language, archival memory framing of Mandela / Farrakhan lineage.
-</div>
-</section>
-
-<!-- DOC -->
-<section class="container">
-<div class="act-title">DOCUMENTARY & VISUAL ASSETS</div>
-<div class="muted">
-Cinematic documentation of Johannesburg ↔ New Orleans creative fusion, field recordings, spiritual studio sessions, township rhythm mapping, second-line procession influence studies.
-</div>
-</section>
-
-<!-- VINYL -->
-<section class="container">
-<div class="act-title">VINYL & PHYSICAL</div>
-<div class="muted">
-Black matte gatefold with gold embossed scripture typography, etched symbolic vinyl sides, collector archival box edition with sealed lineage packaging.
-</div>
-</section>
-
-<!-- PR -->
-<section class="container">
-<div class="act-title">STRATEGIC PR PARTNERSHIPS</div>
-<div class="muted">
-Pan-African cultural institutions, global hip-hop archives, avant-garde fashion editorial houses, diaspora intellectual media networks, luxury vinyl collector ecosystems, philosophical music journals.
-</div>
 </section>
 
 <!-- PLAYER -->
 <div class="player">
-  <div id="now" class="small">Nothing Playing</div>
+  <div id="now">Nothing Playing</div>
   <audio id="audio" controls></audio>
 </div>
 
@@ -329,7 +353,33 @@ function play(src,title){
   audio.play();
   now.innerText = "Now Playing: " + title;
 }
+
+/* SECURITY LAYER */
+document.addEventListener("contextmenu", e=>e.preventDefault());
+document.addEventListener("copy", e=>e.preventDefault());
+document.addEventListener("cut", e=>e.preventDefault());
+document.addEventListener("paste", e=>e.preventDefault());
+
+document.addEventListener("keydown", function(e){
+  if(
+    (e.ctrlKey && ["c","s","u","p","a"].includes(e.key.toLowerCase())) ||
+    (e.ctrlKey && e.shiftKey && ["i","j","c"].includes(e.key.toLowerCase())) ||
+    e.key === "F12"
+  ){
+    e.preventDefault();
+  }
+});
 </script>
+
+<!-- FOOTER -->
+<footer class="container text-xs muted border-t border-[#C5A88033]">
+Classification: Confidential Creative Development Presentation<br/>
+Company Name: Z3 Productions<br/>
+Genre: Hip Hop; Rap<br/>
+Contact Information: Kamohelo2003@yahoo.com | +27847530671<br/>
+Management Contact: +27847530671<br/>
+Executive Contact: Kamohelo2003@yahoo.com
+</footer>
 
 </body>
 </html>
