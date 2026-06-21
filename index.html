@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>A Written Testimony: MAKTUB</title>
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  body{
+    background:#0D0D0D;
+    color:#F5F5F7;
+    font-family: ui-sans-serif, system-ui;
+    user-select:none;
+    overflow-x:hidden;
+  }
+
+  @media print{
+    body{ display:none !important; }
+  }
+
+  .gold{ color:#C5A880; }
+  .border-gold{ border-color:#C5A88055; }
+
+  .grid-overlay{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background-image: repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.03),
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 60px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.02),
+      rgba(255,255,255,0.02) 1px,
+      transparent 1px,
+      transparent 60px
+    );
+    z-index:0;
+  }
+
+  .watermark{
+    position:fixed;
+    inset:-200px;
+    z-index:9999;
+    pointer-events:none;
+    opacity:0.025;
+    transform:rotate(-25deg);
+    font-size:22px;
+    letter-spacing:2px;
+    white-space:nowrap;
+  }
+
+  .fade{
+    transition: all 0.6s ease;
+  }
+
+  .card{
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(197,168,128,0.2);
+    backdrop-filter: blur(10px);
+  }
+
+  audio{
+    width:100%;
+    filter: invert(80%) sepia(20%) saturate(300%);
+  }
+</style>
+</head>
+
+<body class="relative">
+
+<div class="grid-overlay"></div>
+
+<div class="watermark">
+  Private Listening Presentation — Unauthorized Distribution Prohibited
+  Private Listening Presentation — Unauthorized Distribution Prohibited
+  Private Listening Presentation — Unauthorized Distribution Prohibited
+</div>
+
+<!-- HERO -->
+<section class="relative z-10 px-6 py-20 text-center">
+  <h1 class="text-4xl md:text-6xl font-light tracking-wider">
+    A Written Testimony: <span class="gold">MAKTUB</span>
+  </h1>
+  <p class="mt-4 text-sm opacity-70">
+    Confidential Creative Development Presentation — Jay Electronica x Perfektionist x Z3 Productions
+  </p>
+</section>
+
+<!-- MANIFESTO -->
+<section class="relative z-10 px-6 max-w-5xl mx-auto py-10 card rounded-xl">
+  <h2 class="text-xl gold mb-4">The Manifesto</h2>
+  <p class="leading-relaxed text-sm">
+    "A Written Testimony: MAKTUB is a sonic pilgrimage across the Atlantic — a dialogue between the descendants of the transatlantic divide, bound by shared struggle, divine purpose, and ancestral memory. Inspired by Minister Louis Farrakhan’s visits to South Africa in 1996 and 1998, the album imagines the ocean as both a wound and a bridge — carrying not just the ghosts of the past, but the echoes of resistance, faith, and rebirth.
+    In 1996, Farrakhan’s meeting with President Nelson Mandela symbolized a convergence of two spiritual lineages of liberation: one born in Montgomery and Harlem, the other in Soweto and Robben Island. Mandela’s vision of non-racism, non-sexism, and religious tolerance reflected a new dawn; Farrakhan’s fire reminded the world that freedom without truth remains incomplete. Two years later, in 1998, when he returned to defend Winnie Madikizela-Mandela — calling her “the mother of a great struggle” — he affirmed the feminine divine within resistance, the matriarchal strength that sustains revolutions across oceans.
+    Through this lens, MAKTUB becomes both testimony and prophecy.
+    It is written — that Black struggle, whether in the streets of Chicago or the townships of Johannesburg, flows from one spiritual current. It is written — that the voices silenced by oppression will find rhythm in new tongues. And it is written — that even when separated by distance, the diaspora speaks one language: the language of faith, resistance, and transcendence.
+    The album unfolds in three acts — The Descent, The Pilgrimage, and The Revelation — mirroring the journey from oppression to awakening. The production fuses ancestral drums and township choirs with boom-bap mysticism and cosmic jazz samples, blending the pulse of Johannesburg with the metaphysical soundscape of New Orleans. Jay Electronica’s verses serve as scripture — invoking prophets, ancestors, and revolutionaries — while the South African producer grounds it in the soil of a nation that once walked Mandela’s long road to freedom.
+    By its end, MAKTUB is not merely an album; it’s a bridge — an offering to the ancestors who crossed the Atlantic in chains and those who broke them with song, prayer, and spirit."
+  </p>
+</section>
+
+<!-- FILTER -->
+<section class="relative z-10 px-6 py-10 text-center">
+  <button onclick="filterAct('all')" class="mx-2 px-4 py-2 border border-gold">All</button>
+  <button onclick="filterAct('descent')" class="mx-2 px-4 py-2 border border-gold">The Descent</button>
+  <button onclick="filterAct('pilgrimage')" class="mx-2 px-4 py-2 border border-gold">The Pilgrimage</button>
+  <button onclick="filterAct('revelation')" class="mx-2 px-4 py-2 border border-gold">The Revelation</button>
+</section>
+
+<!-- TRACK GRID -->
+<section class="relative z-10 px-6 grid md:grid-cols-2 gap-6 pb-20">
+
+<!-- TRACK TEMPLATE -->
+<script>
+const tracks = [
+{
+act:"descent",
+title:"Stroll Through the Dark",
+img:"1000140538.jpg",
+quote:"Before the light, there’s always the walk through shadow.",
+desc:"Every journey begins in shadow. Stroll Through the Dark opens the album like a whispered prayer from the abyss; the moment before light breaks through. The beat feels submerged, laced with echoes of Johannesburg night markets and New Orleans backstreets. Jay speaks of spiritual blindness, fear, and the courage to keep walking when no map exists. It’s the descent into the self; necessary before any ascension."
+},
+{
+act:"descent",
+title:"Wrong Turn",
+img:"1000140540.jpg",
+quote:"Every detour is a lesson in disguise.",
+desc:"Temptation speaks in familiar voices. Wrong Turn is that detour we all take: the pursuit of power, fame, or validation that leads us away from truth. The production is fragmented, pulsing with dissonant drums and reversed samples; a sonic metaphor for confusion. Yet even in error, destiny is at work. As Jay reminds us: “Even the wrong road leads to the right gate if your faith don’t fade.”"
+},
+{
+act:"descent",
+title:"A Thousand Deaths",
+img:"1000140542.jpg",
+quote:"To rise, you must die a thousand times.",
+desc:"This track captures the breaking of ego. The deaths we endure before rebirth. Drawing from both African ancestral chants and Nation of Islam speeches, A Thousand Deaths explores the cycles of destruction and renewal that mark every revolution, internal or political. It’s a storm of sound, unsettling, but purifying. Each bar feels like shedding another layer of the old self."
+},
+{
+act:"pilgrimage",
+title:"One Path",
+img:"1000140544.jpg",
+quote:"When destiny calls, all other roads vanish.",
+desc:"After chaos comes clarity. One Path represents the awakening; the realization that all roads were guiding him to this single moment. The beat is steady, almost meditative, driven by percussion that feels like footsteps across desert sand. Lyrically, Jay aligns destiny with divine timing, bridging the wisdom of Mandela and the discipline of the FOI (Fruit of Islam). The message: purpose is never found, it’s remembered."
+},
+{
+act:"pilgrimage",
+title:"Fleeting Moments",
+img:"1000140546.jpg",
+quote:"Gratitude is the memory of the soul.",
+desc:"Life passes in blinks. Fleeting Moments slows time, urging gratitude before the next storm. Built around a soulful female vocal loop, the track mirrors both the sorrow and beauty of impermanence. It’s a letter to those lost along the way; freedom fighters, fallen prophets, loved ones. Jay reflects, “Even forever is temporary when you see it through God’s clock.”"
+},
+{
+act:"pilgrimage",
+title:"Space Odyssey",
+img:"1000140548.jpg",
+quote:"Liberation isn’t bound to earth; it’s cosmic.",
+desc:"A cosmic detour, both literal and spiritual. Space Odyssey expands beyond the physical, imagining liberation as interstellar. The soundscape fuses South African township beats with cosmic jazz, reminiscent of Sun Ra. It’s not escapism, but elevation; the belief that Black consciousness and creativity are boundless. The verse radiates cosmic theology, bridging the stars and the struggle."
+},
+{
+act:"revelation",
+title:"Dialogue with the Gods",
+img:"1000140550.jpg",
+quote:"Sometimes revelation speaks in silence.",
+desc:"The veil lifts. Dialogue with the Gods is where Jay becomes conduit, not performer. The production is stripped back, almost sacred, allowing space for silence and breath. Drawing parallels between Farrakhan’s prophetic voice and ancestral guidance, Jay delivers verses that sound like scripture. This is communion with the unseen; a reminder that revelation often arrives as a whisper, not thunder."
+},
+{
+act:"revelation",
+title:"Not for the Faint-Hearted",
+img:"1000140552.jpg",
+quote:"Truth demands the discipline of warriors.",
+desc:"Truth demands strength. This track is a war cry for the spiritually disciplined, those willing to bear the cost of awakening. The drums hit like marching soldiers; the vocals rise like a rallying call. Jay warns that enlightenment is no luxury; it’s labour. “To know is to hurt. To rise is to burn.” It’s both warning and affirmation for those walking the same path."
+},
+{
+act:"revelation",
+title:"Arrivederci (So Long, Goodbye...)",
+img:"1000140554.jpg",
+quote:"Every farewell is a quiet form of freedom.",
+desc:"Farewell to illusions. Arrivederci closes the cycle of death and rebirth with grace. The instrumentation is cinematic: strings, choirs, and faint echoes of gospel organ. Jay bids goodbye to the ego, to false prophets, and to his former self. It’s melancholic but freeing; the last tear before transformation."
+},
+{
+act:"revelation",
+title:"Oasis of Life",
+img:"1000140556.jpg",
+quote:"After the desert comes the bloom.",
+desc:"Peace after pilgrimage. Oasis of Life is both ending and beginning; the destination where the desert finally blooms. The production merges warm percussion, choir harmonies, and celestial synths. Jay’s tone softens; his words glow with acceptance. This is enlightenment, not as escape, but as return; a reminder that everything written in the divine script was necessary. Maktub; it was written."
+}
+];
+</script>
+
+<div id="trackGrid" class="col-span-2 grid md:grid-cols-2 gap-6"></div>
+
+</section>
+
+<!-- ASSETS -->
+<section class="relative z-10 px-6 py-10 card mx-6 rounded-xl">
+  <h2 class="gold text-lg mb-4">Artwork Assets Showcase</h2>
+  <div class="grid md:grid-cols-4 gap-4 opacity-80">
+    <img src="assets/1000140538.jpg"/>
+    <img src="assets/1000140540.jpg"/>
+    <img src="assets/1000140542.jpg"/>
+    <img src="assets/1000140544.jpg"/>
+  </div>
+</section>
+
+<!-- DOC -->
+<section class="relative z-10 px-6 py-10 card mx-6 mt-6 rounded-xl">
+  <h2 class="gold text-lg mb-4">Documentary & Visual Assets Track</h2>
+  <div class="h-40 border border-gold flex items-center justify-center opacity-60">
+    [VIDEO / BTS FOOTAGE PLACEHOLDER — NEW ORLEANS x SOUTH AFRICA UNION]
+  </div>
+</section>
+
+<!-- VINYL -->
+<section class="relative z-10 px-6 py-10 card mx-6 mt-6 rounded-xl">
+  <h2 class="gold text-lg mb-4">Vinyl Presentation & Physical Mockups</h2>
+  <div class="grid md:grid-cols-3 gap-4">
+    <div class="border border-gold h-40 flex items-center justify-center">Gatefold Render</div>
+    <div class="border border-gold h-40 flex items-center justify-center">Etched Surface</div>
+    <div class="border border-gold h-40 flex items-center justify-center">Collector Box</div>
+  </div>
+</section>
+
+<!-- PR -->
+<section class="relative z-10 px-6 py-10 card mx-6 mt-6 rounded-xl">
+  <h2 class="gold text-lg mb-4">Strategic PR Partnerships Layout</h2>
+  <div class="grid md:grid-cols-3 gap-4 text-sm opacity-80">
+    <div>Global Culture Publications</div>
+    <div>Luxury Music Editorials</div>
+    <div>Pan-African Media Networks</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="relative z-10 px-6 py-10 mt-10 border-t border-gold text-xs opacity-70">
+  <p>Classification: Confidential Creative Development Presentation</p>
+  <p>Company Name: Z3 Productions</p>
+  <p>Genre: Hip Hop; Rap</p>
+  <p>Contact Information: Kamohelo2003@yahoo.com | +27847530671</p>
+  <p>Management Contact: +27847530671</p>
+  <p>Executive Contact: Kamohelo2003@yahoo.com</p>
+</footer>
+
+<script>
+// render tracks
+const grid = document.getElementById("trackGrid");
+
+function render(list){
+  grid.innerHTML = "";
+  list.forEach(t=>{
+    const el = document.createElement("div");
+    el.className = "card p-4 rounded-xl fade";
+    el.innerHTML = `
+      <div class="text-xs gold mb-2">${t.act.toUpperCase()}</div>
+      <h3 class="text-lg mb-2">${t.title}</h3>
+      <p class="text-xs italic opacity-70 mb-2">${t.quote}</p>
+      <img src="assets/${t.img}" class="w-full h-40 object-cover mb-3"/>
+      <p class="text-xs opacity-80 mb-3">${t.desc}</p>
+      <audio controls>
+        <source src="audio/${t.title}.mp3" type="audio/mpeg">
+      </audio>
+    `;
+    grid.appendChild(el);
+  });
+}
+
+function filterAct(act){
+  if(act==="all") render(tracks);
+  else render(tracks.filter(t=>t.act===act));
+}
+
+render(tracks);
+
+// security interception
+document.addEventListener("contextmenu", e=>e.preventDefault());
+document.addEventListener("copy", e=>e.preventDefault());
+document.addEventListener("cut", e=>e.preventDefault());
+document.addEventListener("paste", e=>e.preventDefault());
+
+document.addEventListener("keydown", function(e){
+  if(
+    (e.ctrlKey && ["c","s","p","u","a"].includes(e.key.toLowerCase())) ||
+    (e.ctrlKey && e.shiftKey && ["i","j","c"].includes(e.key.toLowerCase())) ||
+    e.key === "F12"
+  ){
+    e.preventDefault();
+  }
+});
+</script>
+
+</body>
+</html>
