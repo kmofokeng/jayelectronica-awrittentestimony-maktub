@@ -359,45 +359,45 @@ Diaspora visual system: Africa ↔ America symbolic bridge architecture, prophet
 </div>
 <!-- VISUAL ASSETS SLIDESHOW -->
 <div class="relative overflow-hidden border border-[#C5A88033] rounded-3xl bg-[#050505]">
-  <div class="flex w-[500%] animate-slide">
+  <div class="flex w-full animate-slide">
     <!-- IMAGE 1 -->
-    <div class="w-full flex-shrink-0 p-6">
+    <div class="w-full shrink-0 p-6">
       <img
         src="images/million-woman-march_04-10-2018.jpg"
         alt="Million Woman March"
-        class="w-full h-[650px] object-contain bg-black rounded-2xl"
+        class="w-full h-[70vh] object-contain bg-black rounded-2xl"
         draggable="false">
     </div>
     <!-- IMAGE 2 -->
-    <div class="w-full flex-shrink-0 p-6">
+    <div class="w-full shrink-0 p-6">
       <img
         src="images/winnie-mandela_minister-farrakhan_04-10-2018b.jpg"
         alt="Winnie Mandela and Minister Farrakhan"
-        class="w-full h-[650px] object-contain bg-black rounded-2xl"
+        class="w-full h-[70vh] object-contain bg-black rounded-2xl"
         draggable="false">
     </div>
     <!-- IMAGE 3 -->
-    <div class="w-full flex-shrink-0 p-6">
+    <div class="w-full shrink-0 p-6">
       <img
         src="images/winnie-mandela-04-10-2018c.jpg"
         alt="Winnie Mandela"
-        class="w-full h-[650px] object-contain bg-black rounded-2xl"
+        class="w-full h-[70vh] object-contain bg-black rounded-2xl"
         draggable="false">
     </div>
     <!-- IMAGE 4 -->
-    <div class="w-full flex-shrink-0 p-6">
+    <div class="w-full shrink-0 p-6">
       <img
         src="images/mlf-mandela-2-1.26.96-1.jpg"
         alt="Nelson Mandela and Minister Farrakhan"
-        class="w-full h-[650px] object-contain bg-black rounded-2xl"
+        class="w-full h-[70vh] object-contain bg-black rounded-2xl"
         draggable="false">
     </div>
     <!-- IMAGE 5 -->
-    <div class="w-full flex-shrink-0 p-6">
+    <div class="w-full shrink-0 p-6">
       <img
         src="images/HMLF-Mother-Khadijah-and-Winnie-Mandela-1024x687.jpg"
         alt="Mother Khadijah, Winnie Mandela and Minister Farrakhan"
-        class="w-full h-[650px] object-contain bg-black rounded-2xl"
+        class="w-full h-[70vh] object-contain bg-black rounded-2xl"
         draggable="false">
     </div>
   </div>
@@ -406,24 +406,12 @@ Diaspora visual system: Africa ↔ America symbolic bridge architecture, prophet
 
 <style>
 @keyframes slide {
-  0%,15% {
-    transform: translateX(0%);
-  }
-  20%,35% {
-    transform: translateX(-100%);
-  }
-  40%,55% {
-    transform: translateX(-200%);
-  }
-  60%,75% {
-    transform: translateX(-300%);
-  }
-  80%,95% {
-    transform: translateX(-400%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
+  0%, 18% { transform: translateX(0%); }
+  20%, 38% { transform: translateX(-100%); }
+  40%, 58% { transform: translateX(-200%); }
+  60%, 78% { transform: translateX(-300%); }
+  80%, 98% { transform: translateX(-400%); }
+  100% { transform: translateX(0%); }
 }
 .animate-slide {
   animation: slide 25s infinite ease-in-out;
