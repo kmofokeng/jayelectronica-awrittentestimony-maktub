@@ -357,50 +357,28 @@ Completion. Return. The desert blooms. MAKTUB is fulfilled — it was written. T
 <div class="muted mb-10">
 Diaspora visual system: Africa ↔ America symbolic bridge architecture, prophetic typography layers, desert-to-cosmos visual transition language, archival memory framing of Mandela / Farrakhan lineage.
 </div>
-<!-- VISUAL ASSETS SLIDESHOW -->
-<div class="relative overflow-hidden border border-[#C5A88033] rounded-3xl bg-[#050505]">
-  <div class="flex w-full animate-slide">
-    <!-- IMAGE 1 -->
-    <div class="w-full shrink-0 p-6">
-      <img
-        src="images/million-woman-march_04-10-2018.jpg"
-        alt="Million Woman March"
-        class="w-full h-[70vh] object-contain bg-black rounded-2xl"
-        draggable="false">
-    </div>
-    <!-- IMAGE 2 -->
-    <div class="w-full shrink-0 p-6">
-      <img
-        src="images/winnie-mandela_minister-farrakhan_04-10-2018b.jpg"
-        alt="Winnie Mandela and Minister Farrakhan"
-        class="w-full h-[70vh] object-contain bg-black rounded-2xl"
-        draggable="false">
-    </div>
-    <!-- IMAGE 3 -->
-    <div class="w-full shrink-0 p-6">
-      <img
-        src="images/winnie-mandela-04-10-2018c.jpg"
-        alt="Winnie Mandela"
-        class="w-full h-[70vh] object-contain bg-black rounded-2xl"
-        draggable="false">
-    </div>
-    <!-- IMAGE 4 -->
-    <div class="w-full shrink-0 p-6">
-      <img
-        src="images/mlf-mandela-2-1.26.96-1.jpg"
-        alt="Nelson Mandela and Minister Farrakhan"
-        class="w-full h-[70vh] object-contain bg-black rounded-2xl"
-        draggable="false">
-    </div>
-    <!-- IMAGE 5 -->
-    <div class="w-full shrink-0 p-6">
-      <img
-        src="images/HMLF-Mother-Khadijah-and-Winnie-Mandela-1024x687.jpg"
-        alt="Mother Khadijah, Winnie Mandela and Minister Farrakhan"
-        class="w-full h-[70vh] object-contain bg-black rounded-2xl"
-        draggable="false">
-    </div>
-  </div>
+<!-- VISUAL ASSETS SLIDESHOW (FADE VERSION) -->
+<div class="relative overflow-hidden border border-[#C5A88033] rounded-3xl bg-[#050505] h-[70vh]">
+  <!-- Slide 1 -->
+  <img src="images/million-woman-march_04-10-2018.jpg"
+       class="absolute inset-0 w-full h-full object-contain bg-black opacity-100 transition-opacity duration-1000"
+       data-slide />
+  <!-- Slide 2 -->
+  <img src="images/winnie-mandela_minister-farrakhan_04-10-2018b.jpg"
+       class="absolute inset-0 w-full h-full object-contain bg-black opacity-0 transition-opacity duration-1000"
+       data-slide />
+  <!-- Slide 3 -->
+  <img src="images/winnie-mandela-04-10-2018c.jpg"
+       class="absolute inset-0 w-full h-full object-contain bg-black opacity-0 transition-opacity duration-1000"
+       data-slide />
+  <!-- Slide 4 -->
+  <img src="images/mlf-mandela-2-1.26.96-1.jpg"
+       class="absolute inset-0 w-full h-full object-contain bg-black opacity-0 transition-opacity duration-1000"
+       data-slide />
+  <!-- Slide 5 -->
+  <img src="images/HMLF-Mother-Khadijah-and-Winnie-Mandela-1024x687.jpg"
+       class="absolute inset-0 w-full h-full object-contain bg-black opacity-0 transition-opacity duration-1000"
+       data-slide />
 </div>
 </section>
 
@@ -529,6 +507,26 @@ document.addEventListener("keydown", function(e){
   }
 });
 </script>
+
+<script>
+  const slides = document.querySelectorAll('[data-slide]');
+  let current = 0;
+
+  function showSlide(index) {
+    slides.forEach((img, i) => {
+      img.style.opacity = i === index ? '1' : '0';
+    });
+  }
+  
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }
+
+  // start rotation
+  showSlide(current);
+  setInterval(nextSlide, 4000);
+  </script>
 
   <!-- FOOTER -->
   <footer class="bg-black border-t border-neutral-900 py-20 px-6">
