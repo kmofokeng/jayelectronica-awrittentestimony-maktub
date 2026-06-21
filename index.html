@@ -3,39 +3,41 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>MAKTUB | A Written Testimony</title>
+<title>A Written Testimony: MAKTUB</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
 body{
+  margin:0;
   background:#070707;
   color:#EDEDED;
   font-family: ui-sans-serif, system-ui;
   overflow-x:hidden;
 }
 
-/* subtle cinematic grain */
+/* cinematic grain */
 body:before{
   content:"";
   position:fixed;
   inset:0;
-  background:radial-gradient(circle at 20% 20%, rgba(197,168,128,0.08), transparent 40%),
-             radial-gradient(circle at 80% 60%, rgba(255,255,255,0.04), transparent 50%);
+  background: radial-gradient(circle at 20% 10%, rgba(197,168,128,0.08), transparent 40%),
+              radial-gradient(circle at 80% 60%, rgba(255,255,255,0.04), transparent 50%);
   pointer-events:none;
 }
 
 .gold{ color:#C5A880; }
+.muted{ color:#A0A0A0; }
 
 .container{
-  max-width:1200px;
+  max-width:1100px;
   margin:auto;
   padding:80px 24px;
 }
 
 /* HERO */
 .hero{
-  height:90vh;
+  height:85vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -45,36 +47,36 @@ body:before{
 .title{
   font-size:64px;
   font-weight:200;
-  letter-spacing:2px;
 }
 
 .subtitle{
   opacity:0.6;
-  margin-top:16px;
+  margin-top:14px;
+  letter-spacing:1px;
 }
 
 /* MANIFESTO */
 .manifesto{
-  max-width:800px;
+  max-width:820px;
   margin:auto;
   line-height:1.9;
   font-size:15px;
   opacity:0.85;
 }
 
-/* ACT SYSTEM */
+/* ACT SECTION */
 .act{
   margin-top:120px;
 }
 
-.act-header{
+.act-title{
   font-size:11px;
   letter-spacing:6px;
   color:#C5A880;
-  margin-bottom:30px;
+  margin-bottom:40px;
 }
 
-/* TRACK CARD */
+/* TRACK */
 .track{
   border-top:1px solid rgba(197,168,128,0.15);
   padding:40px 0;
@@ -84,17 +86,30 @@ body:before{
 }
 
 .track h3{
-  font-size:28px;
+  font-size:26px;
   font-weight:300;
 }
 
 .quote{
   font-style:italic;
-  opacity:0.6;
+  opacity:0.65;
   margin:10px 0;
 }
 
-/* AUDIO BAR */
+/* BUTTON */
+button{
+  background:transparent;
+  border:1px solid rgba(197,168,128,0.35);
+  color:#fff;
+  padding:6px 14px;
+  cursor:pointer;
+  margin-top:10px;
+}
+button:hover{
+  border-color:#C5A880;
+}
+
+/* PLAYER */
 .player{
   position:fixed;
   bottom:0;
@@ -102,22 +117,20 @@ body:before{
   right:0;
   background:#0B0B0B;
   border-top:1px solid rgba(197,168,128,0.2);
-  padding:14px 20px;
+  padding:12px 18px;
   display:flex;
   align-items:center;
-  gap:20px;
+  justify-content:space-between;
+  z-index:999;
 }
 
-button{
-  background:transparent;
-  border:1px solid rgba(197,168,128,0.3);
-  color:#fff;
-  padding:6px 12px;
-  cursor:pointer;
+audio{
+  width:60%;
 }
 
-button:hover{
-  border-color:#C5A880;
+.small{
+  font-size:12px;
+  opacity:0.7;
 }
 </style>
 </head>
@@ -126,7 +139,7 @@ button:hover{
 
 <!-- HERO -->
 <section class="hero">
-  <div class="gold text-xs tracking-[6px]">CONFIDENTIAL PRESENTATION</div>
+  <div class="gold text-xs tracking-[6px]">CONFIDENTIAL CREATIVE DEVELOPMENT</div>
   <div class="title">A Written Testimony: <span class="gold">MAKTUB</span></div>
   <div class="subtitle">Jay Electronica × Perfektionist × Z3 Productions</div>
 </section>
@@ -136,13 +149,13 @@ button:hover{
 <div class="manifesto">
 
 <p>
-“A Written Testimony: MAKTUB is a sonic pilgrimage across the Atlantic — a dialogue between the descendants of the transatlantic divide, bound by shared struggle, divine purpose, and ancestral memory...
+“A Written Testimony: MAKTUB is a sonic pilgrimage across the Atlantic — a dialogue between the descendants of the transatlantic divide, bound by shared struggle, divine purpose, and ancestral memory. Inspired by Minister Louis Farrakhan’s visits to South Africa in 1996 and 1998, the album imagines the ocean as both a wound and a bridge — carrying not just the ghosts of the past, but the echoes of resistance, faith, and rebirth.”
 </p>
 
 <br/>
 
 <p>
-Inspired by Minister Louis Farrakhan’s visits to South Africa in 1996 and 1998...
+In 1996, Farrakhan’s meeting with President Nelson Mandela symbolized a convergence of two spiritual lineages of liberation: one born in Montgomery and Harlem, the other in Soweto and Robben Island.
 </p>
 
 <br/>
@@ -156,58 +169,160 @@ Inspired by Minister Louis Farrakhan’s visits to South Africa in 1996 and 1998
 </div>
 </section>
 
-<!-- ACTS -->
-<section class="container">
-
-<div class="act">
-<div class="act-header">ACT I — THE DESCENT</div>
+<!-- ACT I -->
+<section class="container act">
+<div class="act-title">ACT I — THE DESCENT</div>
 
 <div class="track">
 <div>
 <h3>Stroll Through the Dark</h3>
 <div class="quote">Before the light, there’s always the walk through shadow.</div>
-<button onclick="play('audio1.mp3','Stroll Through the Dark')">Play</button>
+<button onclick="play('audio/track1.mp3','Stroll Through the Dark')">Play</button>
 </div>
-<div>
-Every journey begins in shadow. A descent into unknowing before revelation.
-</div>
+<div>Every journey begins in shadow. The descent into spiritual unknowing.</div>
 </div>
 
 <div class="track">
 <div>
 <h3>Wrong Turn</h3>
 <div class="quote">Every detour is a lesson in disguise.</div>
-<button onclick="play('audio2.mp3','Wrong Turn')">Play</button>
+<button onclick="play('audio/track2.mp3','Wrong Turn')">Play</button>
 </div>
-<div>
-Even deviation becomes divine instruction.
-</div>
+<div>Deviation becomes divine instruction in disguise.</div>
 </div>
 
 <div class="track">
 <div>
 <h3>A Thousand Deaths</h3>
 <div class="quote">To rise, you must die a thousand times.</div>
-<button onclick="play('audio3.mp3','A Thousand Deaths')">Play</button>
+<button onclick="play('audio/track3.mp3','A Thousand Deaths')">Play</button>
 </div>
+<div>Ego death as repetition of spiritual rebirth cycles.</div>
+</div>
+</section>
+
+<!-- ACT II -->
+<section class="container act">
+<div class="act-title">ACT II — THE PILGRIMAGE</div>
+
+<div class="track">
 <div>
-Ego dissolution through cycles of spiritual rebirth.
+<h3>One Path</h3>
+<div class="quote">When destiny calls, all other roads vanish.</div>
+<button onclick="play('audio/track4.mp3','One Path')">Play</button>
 </div>
+<div>Singular alignment with divine order and remembrance.</div>
 </div>
 
+<div class="track">
+<div>
+<h3>Fleeting Moments</h3>
+<div class="quote">Gratitude is the memory of the soul.</div>
+<button onclick="play('audio/track5.mp3','Fleeting Moments')">Play</button>
+</div>
+<div>Impermanence as sacred instruction in gratitude.</div>
 </div>
 
+<div class="track">
+<div>
+<h3>Space Odyssey</h3>
+<div class="quote">Liberation isn’t bound to earth; it’s cosmic.</div>
+<button onclick="play('audio/track6.mp3','Space Odyssey')">Play</button>
+</div>
+<div>Cosmic Black consciousness expansion beyond earth-bound limits.</div>
+</div>
+</section>
+
+<!-- ACT III -->
+<section class="container act">
+<div class="act-title">ACT III — THE REVELATION</div>
+
+<div class="track">
+<div>
+<h3>Dialogue with the Gods</h3>
+<div class="quote">Sometimes revelation speaks in silence.</div>
+<button onclick="play('audio/track7.mp3','Dialogue with the Gods')">Play</button>
+</div>
+<div>Conduit transmission between ancestral and divine realms.</div>
+</div>
+
+<div class="track">
+<div>
+<h3>Not for the Faint-Hearted</h3>
+<div class="quote">Truth demands the discipline of warriors.</div>
+<button onclick="play('audio/track8.mp3','Not for the Faint-Hearted')">Play</button>
+</div>
+<div>Spiritual discipline as warfare and endurance.</div>
+</div>
+
+<div class="track">
+<div>
+<h3>Arrivederci (So Long, Goodbye...)</h3>
+<div class="quote">Every farewell is a quiet form of freedom.</div>
+<button onclick="play('audio/track9.mp3','Arrivederci')">Play</button>
+</div>
+<div>Ego dissolution through graceful farewell to illusion.</div>
+</div>
+
+<div class="track">
+<div>
+<h3>Oasis of Life</h3>
+<div class="quote">After the desert comes the bloom.</div>
+<button onclick="play('audio/track10.mp3','Oasis of Life')">Play</button>
+</div>
+<div>Return to divine equilibrium — the written fulfillment.</div>
+</div>
+</section>
+
+<!-- ALBUM ART -->
+<section class="container">
+<div class="act-title">ALBUM ART</div>
+<div style="height:420px;border:1px dashed rgba(197,168,128,0.4);display:flex;align-items:center;justify-content:center;">
+PRIMARY VISUAL IDENTITY — MAKTUB (PLACEHOLDER)
+</div>
+</section>
+
+<!-- ASSETS -->
+<section class="container">
+<div class="act-title">ARTWORK ASSETS SHOWCASE</div>
+<div class="muted">
+Diaspora visual system: Africa ↔ America symbolic bridge architecture, prophetic typography layers, desert-to-cosmos visual transition language, archival memory framing of Mandela / Farrakhan lineage.
+</div>
+</section>
+
+<!-- DOC -->
+<section class="container">
+<div class="act-title">DOCUMENTARY & VISUAL ASSETS</div>
+<div class="muted">
+Cinematic documentation of Johannesburg ↔ New Orleans creative fusion, field recordings, spiritual studio sessions, township rhythm mapping, second-line procession influence studies.
+</div>
+</section>
+
+<!-- VINYL -->
+<section class="container">
+<div class="act-title">VINYL & PHYSICAL</div>
+<div class="muted">
+Black matte gatefold with gold embossed scripture typography, etched symbolic vinyl sides, collector archival box edition with sealed lineage packaging.
+</div>
+</section>
+
+<!-- PR -->
+<section class="container">
+<div class="act-title">STRATEGIC PR PARTNERSHIPS</div>
+<div class="muted">
+Pan-African cultural institutions, global hip-hop archives, avant-garde fashion editorial houses, diaspora intellectual media networks, luxury vinyl collector ecosystems, philosophical music journals.
+</div>
 </section>
 
 <!-- PLAYER -->
 <div class="player">
-  <div id="nowPlaying">Nothing Playing</div>
+  <div id="now" class="small">Nothing Playing</div>
   <audio id="audio" controls></audio>
 </div>
 
 <script>
 const audio = document.getElementById("audio");
-const now = document.getElementById("nowPlaying");
+const now = document.getElementById("now");
 
 function play(src,title){
   audio.src = src;
