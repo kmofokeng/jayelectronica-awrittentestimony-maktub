@@ -191,6 +191,19 @@ button:hover{
   width:100%;
 }
 
+.pr-card{
+  padding:32px;
+  border:1px solid rgba(197,168,128,.15);
+  border-radius:24px;
+  background:rgba(255,255,255,.02);
+  transition:.35s;
+}
+
+.pr-card:hover{
+  border-color:#C5A880;
+  transform:translateY(-4px);
+}
+  
 /* PLAYER */
 .player{
   position:fixed;
@@ -309,6 +322,12 @@ It is written — that Black struggle, whether in the streets of Chicago or the 
       The Revelation
     </button>
   </div>
+</section>
+
+<section class="container">
+<div id="trackGrid"
+     class="grid md:grid-cols-2 gap-8">
+</div>
 </section>
   
 <!-- ACT I -->
@@ -463,27 +482,27 @@ Completion. Return. The desert blooms. MAKTUB is fulfilled — it was written. T
     <div class="flex w-[500%] animate-slide">
       <div class="w-full flex-shrink-0 p-6">
         <img src="images/million-woman-march_04-10-2018.jpg"
-             class="w-full h-[650px] object-cover rounded-2xl"
+             class="w-full h-[650px] object-contain rounded-2xl bg-black"
              draggable="false">
       </div>
       <div class="w-full flex-shrink-0 p-6">
         <img src="images/winnie-mandela_minister-farrakhan_04-10-2018b.jpg"
-             class="w-full h-[650px] object-cover rounded-2xl"
+             class="w-full h-[650px] object-contain rounded-2xl bg-black"
              draggable="false">
       </div>
       <div class="w-full flex-shrink-0 p-6">
         <img src="images/winnie-mandela-04-10-2018c.jpg"
-             class="w-full h-[650px] object-cover rounded-2xl"
+             class="w-full h-[650px] object-contain rounded-2xl bg-black"
              draggable="false">
       </div>
       <div class="w-full flex-shrink-0 p-6">
         <img src="images/mlf-mandela-2-1.26.96-1.jpg"
-             class="w-full h-[650px] object-cover rounded-2xl"
+             class="w-full h-[650px] object-contain rounded-2xl bg-black"
              draggable="false">
       </div>
       <div class="w-full flex-shrink-0 p-6">
         <img src="images/HMLF-Mother-Khadijah-and-Winnie-Mandela-1024x687.jpg"
-             class="w-full h-[650px] object-cover rounded-2xl"
+             class="w-full h-[650px] object-contain rounded-2xl bg-black"
              draggable="false">
       </div>
     </div>
@@ -651,9 +670,7 @@ museum-grade packaging,
 collector bundles.
 </p>
 </div>
-
 </div>
-
 </section>
 
 <section class="container">
@@ -748,26 +765,6 @@ document.addEventListener("keydown", function(e){
   }
 });
 </script>
-
-<script>
-  const slides = document.querySelectorAll('[data-slide]');
-  let current = 0;
-
-  function showSlide(index) {
-    slides.forEach((img, i) => {
-      img.style.opacity = i === index ? '1' : '0';
-    });
-  }
-  
-  function nextSlide() {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-  }
-
-  // start rotation
-  showSlide(current);
-  setInterval(nextSlide, 4000);
-  </script>
 
 <script>
 const tracks = [
@@ -873,14 +870,13 @@ grid.innerHTML += `
 });
 }
 
-function filterAct(act,btn){
-document
-.querySelectorAll(".filter-btn")
-.forEach(b=>b.classList.remove("active"));
-btn.classList.add("active");
-renderTracks(act);
+function filterAct(act){
+  document
+    .querySelectorAll(".filter-btn")
+    .forEach(b => b.classList.remove("active-filter"));
+  event.target.classList.add("active-filter");
+  renderTracks(act);
 }
-renderTracks();
 </script>
   
 <footer class="bg-black border-t border-[#C5A88022] py-20 px-6">
