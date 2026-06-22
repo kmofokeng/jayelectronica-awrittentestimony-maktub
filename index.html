@@ -119,6 +119,78 @@ button:hover{
   border-color:#C5A880;
 }
 
+  .filter-btn{
+  padding:14px 28px;
+  border:1px solid rgba(197,168,128,.25);
+  border-radius:999px;
+  background:rgba(255,255,255,.02);
+  color:#d1d1d1;
+  font-size:.8rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  transition:.35s;
+}
+
+.filter-btn:hover{
+  border-color:#C5A880;
+  color:white;
+}
+
+.active-filter{
+  background:rgba(197,168,128,.12);
+  border-color:#C5A880;
+}
+
+.track-card{
+  padding:40px;
+  background:rgba(255,255,255,.02);
+  border:1px solid rgba(197,168,128,.15);
+  border-radius:24px;
+  transition:.35s;
+}
+
+.track-card:hover{
+  transform:translateY(-5px);
+  border-color:#C5A880;
+  box-shadow:0 0 30px rgba(197,168,128,.1);
+}
+
+.track-number{
+  color:#C5A880;
+  letter-spacing:4px;
+  margin-bottom:10px;
+}
+
+.track-act{
+  font-size:.7rem;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  color:#777;
+  margin-bottom:18px;
+}
+
+.track-card h3{
+  font-size:2rem;
+  margin-bottom:16px;
+}
+
+.track-card blockquote{
+  color:#C5A880;
+  font-style:italic;
+  margin-bottom:20px;
+  line-height:1.8;
+}
+
+.track-card p{
+  color:#bbb;
+  line-height:1.9;
+  margin-bottom:25px;
+}
+
+.track-card audio{
+  width:100%;
+}
+
 /* PLAYER */
 .player{
   position:fixed;
@@ -212,6 +284,33 @@ It is written — that Black struggle, whether in the streets of Chicago or the 
 </div>
 </section>
 
+<!-- ACT FILTER -->
+<section class="relative z-10 py-16">
+  <div class="text-center mb-8">
+    <p class="uppercase tracking-[6px] text-[#C5A880] text-xs mb-4">
+      Navigate The Testimony
+    </p>
+    <div class="w-24 h-[1px] bg-[#C5A880] mx-auto mb-10"></div>
+  </div>
+
+  <div class="flex flex-wrap justify-center gap-4">
+    <button onclick="filterAct('all')" class="filter-btn active-filter">
+      All Acts
+    </button>
+
+    <button onclick="filterAct('descent')" class="filter-btn">
+      The Descent
+    </button>
+    
+    <button onclick="filterAct('pilgrimage')" class="filter-btn">
+      The Pilgrimage
+    </button>
+    <button onclick="filterAct('revelation')" class="filter-btn">
+      The Revelation
+    </button>
+  </div>
+</section>
+  
 <!-- ACT I -->
 <section class="container">
 <div class="act-title">ACT I — THE DESCENT</div>
@@ -340,58 +439,79 @@ Completion. Return. The desert blooms. MAKTUB is fulfilled — it was written. T
 
 <!-- ALBUM ART -->
 <section class="container">
-<div class="act-title">ALBUM ART</div>
-<div class="rounded-3xl overflow-hidden border border-[#C5A88033] bg-[#050505] p-4 md:p-6">
-  <img
-    src="images/A written testimony.png"
-    alt="MAKTUB Album Artwork"
-    class="w-full rounded-2xl"
-    draggable="false"
-  >
-</div>
+  <div class="act-title">ALBUM ART</div>
+  <div class="rounded-3xl overflow-hidden border border-[#C5A88033] bg-[#050505] p-4 md:p-6">
+    <img
+      src="images/A written testimony.png"
+      alt="MAKTUB Album Artwork"
+      class="w-full rounded-2xl"
+      draggable="false"
+    >
+  </div>
 </section>
 
 <!-- ASSETS -->
 <section class="container">
-<div class="act-title">ARTWORK ASSETS SHOWCASE</div>
-<div class="muted mb-10">
-Diaspora visual system: Africa ↔ America symbolic bridge architecture, prophetic typography layers, desert-to-cosmos visual transition language, archival memory framing of Mandela / Farrakhan lineage.
-</div>
-<!-- VISUAL ASSETS SLIDESHOW (FADE VERSION) -->
-<div class="relative overflow-hidden border border-[#C5A88033] rounded-3xl bg-[#050505] h-[70vh]">
-  <!-- Slide 1 -->
-  <img src="images/million-woman-march_04-10-2018.jpg"
-       class="absolute inset-0 w-full h-full object-contain bg-black opacity-100 transition-opacity duration-1000"
-       data-slide />
-  <!-- Slide 2 -->
-  <img src="images/winnie-mandela_minister-farrakhan_04-10-2018b.jpg"
-       class="absolute inset-0 w-full h-full object-contain bg-black opacity-0 transition-opacity duration-1000"
-       data-slide />
-  <!-- Slide 3 -->
-  <img src="images/winnie-mandela-04-10-2018c.jpg"
-       class="absolute inset-0 w-full h-full object-contain bg-black opacity-0 transition-opacity duration-1000"
-       data-slide />
-  <!-- Slide 4 -->
-  <img src="images/mlf-mandela-2-1.26.96-1.jpg"
-       class="absolute inset-0 w-full h-full object-contain bg-black opacity-0 transition-opacity duration-1000"
-       data-slide />
-  <!-- Slide 5 -->
-  <img src="images/HMLF-Mother-Khadijah-and-Winnie-Mandela-1024x687.jpg"
-       class="absolute inset-0 w-full h-full object-contain bg-black opacity-0 transition-opacity duration-1000"
-       data-slide />
-</div>
+  <div class="act-title">ARTWORK ASSETS SHOWCASE</div>
+  <div class="muted mb-8">
+    Diaspora visual system: Africa ↔ America symbolic bridge architecture,
+    prophetic typography layers, desert-to-cosmos visual transition language,
+    archival memory framing of Mandela / Farrakhan lineage.
+  </div>
+
+  <div class="relative overflow-hidden border border-[#C5A88033] rounded-3xl bg-[#050505]">
+    <div class="flex w-[500%] animate-slide">
+      <div class="w-full flex-shrink-0 p-6">
+        <img src="images/million-woman-march_04-10-2018.jpg"
+             class="w-full h-[650px] object-cover rounded-2xl"
+             draggable="false">
+      </div>
+      <div class="w-full flex-shrink-0 p-6">
+        <img src="images/winnie-mandela_minister-farrakhan_04-10-2018b.jpg"
+             class="w-full h-[650px] object-cover rounded-2xl"
+             draggable="false">
+      </div>
+      <div class="w-full flex-shrink-0 p-6">
+        <img src="images/winnie-mandela-04-10-2018c.jpg"
+             class="w-full h-[650px] object-cover rounded-2xl"
+             draggable="false">
+      </div>
+      <div class="w-full flex-shrink-0 p-6">
+        <img src="images/mlf-mandela-2-1.26.96-1.jpg"
+             class="w-full h-[650px] object-cover rounded-2xl"
+             draggable="false">
+      </div>
+      <div class="w-full flex-shrink-0 p-6">
+        <img src="images/HMLF-Mother-Khadijah-and-Winnie-Mandela-1024x687.jpg"
+             class="w-full h-[650px] object-cover rounded-2xl"
+             draggable="false">
+      </div>
+    </div>
+  </div>
 </section>
 
 <style>
 @keyframes slide {
-  0%, 18% { transform: translateX(0%); }
-  20%, 38% { transform: translateX(-100%); }
-  40%, 58% { transform: translateX(-200%); }
-  60%, 78% { transform: translateX(-300%); }
-  80%, 98% { transform: translateX(-400%); }
-  100% { transform: translateX(0%); }
+  0%,15% {
+    transform: translateX(0%);
+  }
+  20%,35% {
+    transform: translateX(-100%);
+  }
+  40%,55% {
+    transform: translateX(-200%);
+  }
+  60%,75% {
+    transform: translateX(-300%);
+  }
+  80%,95% {
+    transform: translateX(-400%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
-.animate-slide {
+.animate-slide{
   animation: slide 25s infinite ease-in-out;
 }
 </style>
@@ -467,11 +587,132 @@ A living archive of spiritual, political, and cultural convergence — tracing t
 </div>
 </section>
 
-<!-- PR -->
+<!-- ROLLOUT -->
 <section class="container">
-<div class="act-title">STRATEGIC PR PARTNERSHIPS</div>
-<div class="muted">
-Pan-African cultural institutions, global hip-hop archives, avant-garde fashion editorial houses, diaspora intellectual media networks, luxury vinyl collector ecosystems, philosophical music journals.
+
+<div class="act-title">
+STRATEGIC ROLLOUT BLUEPRINT
+</div>
+
+<div class="grid md:grid-cols-2 gap-8">
+
+<div class="pr-card">
+<h3 class="gold mb-4 text-xl">
+PHASE I — THE WHISPER
+</h3>
+
+<p class="muted">
+Cryptic scripture fragments.
+Desert imagery.
+Archival Mandela/Farrakhan photography.
+Anonymous audio excerpts.
+No explanations.
+Only mythology.
+</p>
+</div>
+
+<div class="pr-card">
+<h3 class="gold mb-4 text-xl">
+PHASE II — CULTURAL ACTIVATION
+</h3>
+
+<p class="muted">
+Selective distribution through thought leaders,
+diaspora intellectual circles,
+hip-hop historians,
+Pan-African institutions
+and trusted cultural gatekeepers.
+</p>
+</div>
+
+<div class="pr-card">
+<h3 class="gold mb-4 text-xl">
+PHASE III — VISUAL WORLD BUILDING
+</h3>
+
+<p class="muted">
+Mini-documentaries,
+animated scripture sequences,
+Mandela/Farrakhan archive integrations,
+Johannesburg and New Orleans location pieces.
+</p>
+</div>
+
+<div class="pr-card">
+<h3 class="gold mb-4 text-xl">
+PHASE IV — COLLECTOR ECONOMY
+</h3>
+
+<p class="muted">
+Limited vinyl editions,
+archival photo books,
+numbered certificates,
+museum-grade packaging,
+collector bundles.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="container">
+
+<div class="act-title">
+STRATEGIC PR PARTNERSHIPS
+</div>
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<div class="pr-card">
+<h3 class="gold mb-4">
+HIP HOP
+</h3>
+
+<p class="muted">
+Mass Appeal<br>
+Complex<br>
+XXL<br>
+The Source<br>
+Okayplayer<br>
+Rap Radar<br>
+Sway Universe<br>
+REVOLT<br>
+Drink Champs
+</p>
+</div>
+
+<div class="pr-card">
+<h3 class="gold mb-4">
+DIASPORA & INTELLECTUAL
+</h3>
+
+<p class="muted">
+The Africa Center<br>
+Howard University Archives<br>
+Schomburg Center<br>
+Afropunk<br>
+The Black Archives<br>
+Pan-African Review<br>
+Diaspora Dialogues
+</p>
+</div>
+
+<div class="pr-card">
+<h3 class="gold mb-4">
+LUXURY & CULTURE
+</h3>
+
+<p class="muted">
+Highsnobiety<br>
+Hypebeast<br>
+Monocle<br>
+Wallpaper*<br>
+Dazed<br>
+032c<br>
+Nowness
+</p>
+</div>
 </div>
 </section>
 
@@ -528,42 +769,190 @@ document.addEventListener("keydown", function(e){
   setInterval(nextSlide, 4000);
   </script>
 
-  <!-- FOOTER -->
-  <footer class="bg-black border-t border-neutral-900 py-20 px-6">
-    <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-4xl mb-4">
-        Jay Electronica
-      </h2>
-      <p class="gold-text uppercase tracking-[5px] text-sm mb-10">
-        A Written Testimony: MAKTUB
-      </p>
-      <div class="grid md:grid-cols-3 gap-10 text-neutral-400">
-        <div>
-          <h4 class="text-white mb-3 uppercase tracking-[3px] text-xs">
-            Genre
-          </h4>
-          <p>Hip Hop; Rap</p>
-        </div>
-        <div>
-          <h4 class="text-white mb-3 uppercase tracking-[3px] text-xs">
-            Contact
-          </h4>
-          <p>Kamohelo2003@yahoo.com</p>
-          <p>+27847530671</p>
-        </div>
-        <div>
-          <h4 class="text-white mb-3 uppercase tracking-[3px] text-xs">
-            Company
-          </h4>
+<script>
+const tracks = [
+{
+act:"descent",
+title:"Stroll Through the Dark",
+quote:"Before the light, there’s always the walk through shadow.",
+audio:"https://www.dropbox.com/scl/fi/n0f6v3faq2sw6iuswj7u3/01.-Stroll-Through-the-Dark.mp3?rlkey=sgxavs4tgmzobxe4kd26clehp&st=4vbjdt42&raw=1",
+desc:"Every journey begins in shadow. Stroll Through the Dark opens the album like a whispered prayer from the abyss; the moment before light breaks through. The beat feels submerged, laced with echoes of Johannesburg night markets and New Orleans backstreets. Jay speaks of spiritual blindness, fear, and the courage to keep walking when no map exists. It’s the descent into the self; necessary before any ascension."
+},
 
-          <p>Z3 Productions</p>
-        </div>
-      </div>
-      <div class="mt-16 text-neutral-600 text-sm tracking-[3px] uppercase">
-        Confidential Creative Development Presentation
-      </div>
-    </div>
-  </footer>
+{
+act:"descent",
+title:"Wrong Turn",
+quote:"Every detour is a lesson in disguise.",
+audio:"https://www.dropbox.com/scl/fi/y5f72jj98um77lzn37w5f/02.-Wrong-Turn.mp3?rlkey=7rzn9xkzarvbuxxsccp7ny5o5&st=1k7q8unu&raw=1",
+desc:"Temptation speaks in familiar voices. Wrong Turn is that detour we all take: the pursuit of power, fame, or validation that leads us away from truth."
+},
+
+{
+act:"descent",
+title:"A Thousand Deaths",
+quote:"To rise, you must die a thousand times.",
+audio:"https://www.dropbox.com/scl/fi/3qoxblfqj01xjadm4c5w9/03.-A-Thousand-Deaths.mp3?rlkey=uo4t51fko5i5x56zygtx2mbho&st=l4ftgiqf&raw=1",
+desc:"This track captures the breaking of ego. The deaths we endure before rebirth."
+},
+
+{
+act:"pilgrimage",
+title:"One Path",
+quote:"When destiny calls, all other roads vanish.",
+audio:"https://www.dropbox.com/scl/fi/soh8s9ttei00vzljyt5k6/04.-One-Path.mp3?rlkey=hunvtqyore9lponltuzbf15pp&st=2221hv9m&raw=1",
+desc:"After chaos comes clarity."
+},
+
+{
+act:"pilgrimage",
+title:"Fleeting Moments",
+quote:"Gratitude is the memory of the soul.",
+audio:"https://www.dropbox.com/scl/fi/y0apuw9siq5ms8zpq1xrj/05.-Fleeting-Moments.mp3?rlkey=j4rr587dyybnwbr9vpzqu9j0z&st=hurhyg8d&raw=1",
+desc:"Life passes in blinks."
+},
+
+{
+act:"pilgrimage",
+title:"Space Odyssey",
+quote:"Liberation isn’t bound to earth; it’s cosmic.",
+audio:"https://www.dropbox.com/scl/fi/7hbc3bxa4c90wujkmlaso/06.-Space-Odyssey.mp3?rlkey=ua5hqbm22fmotiumsxfakj4xi&st=snvfshcs&raw=1",
+desc:"A cosmic detour, both literal and spiritual."
+},
+
+{
+act:"revelation",
+title:"Dialogue with the Gods",
+quote:"Sometimes revelation speaks in silence.",
+audio:"https://www.dropbox.com/scl/fi/wmjtcj4r2n2f3247rymxl/07.-Dialogue-with-the-Gods.mp3?rlkey=chu05qjj4jcx7s9i1flv8e6ak&st=qg57yxcd&raw=1",
+desc:"The veil lifts."
+},
+
+{
+act:"revelation",
+title:"Not for the Faint-Hearted",
+quote:"Truth demands the discipline of warriors.",
+audio:"https://www.dropbox.com/scl/fi/ot3tihe7q9nufqeu8x0p5/08.-Not-for-the-Faint-Hearted.mp3?rlkey=vnnt7glglln7ax6idfa9ir3tl&st=0kvs08l2&raw=1",
+desc:"Truth demands strength."
+},
+
+{
+act:"revelation",
+title:"Arrivederci (So Long, Goodbye...)",
+quote:"Every farewell is a quiet form of freedom.",
+audio:"https://www.dropbox.com/scl/fi/6e7bz6r4yb9kny90r1da4/09.-Arrivederci-So-Long-Goodbye.mp3?rlkey=21egqn4yf5dsygijkt69yqp0o&st=b1u6cqd8&raw=1",
+desc:"Farewell to illusions."
+},
+
+{
+act:"revelation",
+title:"Oasis of Life",
+quote:"After the desert comes the bloom.",
+audio:"https://www.dropbox.com/scl/fi/xpf6cqv30xadh1bxjm7x3/10.-Oasis-of-Life.mp3?rlkey=3ilyae9hjm3h5vxg3izr6730d&st=om1gft8w&raw=1",
+desc:"Peace after pilgrimage."
+}
+];
+
+const grid=document.getElementById("trackGrid");
+function renderTracks(act="all"){
+grid.innerHTML="";
+tracks
+.filter(t=>act==="all"||t.act===act)
+.forEach(t=>{
+
+grid.innerHTML += `
+<div class="track-card">
+<div class="act">${t.act}</div>
+<h3>${t.title}</h3>
+<div class="quote">${t.quote}</div>
+<p class="muted">${t.desc}</p>
+<audio controls>
+<source src="${t.audio}" type="audio/mpeg">
+</audio>
+</div>
+`;
+});
+}
+
+function filterAct(act,btn){
+document
+.querySelectorAll(".filter-btn")
+.forEach(b=>b.classList.remove("active"));
+btn.classList.add("active");
+renderTracks(act);
+}
+renderTracks();
+</script>
+  
+<footer class="bg-black border-t border-[#C5A88022] py-20 px-6">
+<div class="max-w-6xl mx-auto">
+<div class="grid md:grid-cols-5 gap-10">
+<div>
+<h4 class="gold uppercase tracking-[3px] text-xs mb-4">
+Classification
+</h4>
+
+<p class="muted text-sm">
+Confidential Creative Development Presentation
+</p>
+</div>
+
+<div>
+<h4 class="gold uppercase tracking-[3px] text-xs mb-4">
+Artist
+</h4>
+
+<p class="muted text-sm">
+Jay Electronica
+</p>
+</div>
+
+<div>
+<h4 class="gold uppercase tracking-[3px] text-xs mb-4">
+Company
+</h4>
+
+<p class="muted text-sm">
+Z3 Productions
+</p>
+</div>
+
+<div>
+<h4 class="gold uppercase tracking-[3px] text-xs mb-4">
+Genre
+</h4>
+
+<p class="muted text-sm">
+Hip Hop; Rap
+</p>
+</div>
+
+<div>
+<h4 class="gold uppercase tracking-[3px] text-xs mb-4">
+Contacts
+</h4>
+
+<p class="muted text-sm">
+Kamohelo2003@yahoo.com
+</p>
+
+<p class="muted text-sm">
++27847530671
+</p>
+</div>
+</div>
+
+<div class="mt-16 pt-10 border-t border-[#C5A88022] text-center">
+<div class="text-3xl font-light mb-3">
+A Written Testimony:
+<span class="gold">MAKTUB</span>
+</div>
+
+<div class="muted text-sm tracking-[4px] uppercase">
+Private Listening Presentation — Unauthorized Distribution Prohibited
+</div>
+</div>
+</div>
+</footer>
 
 </body>
 </html>
