@@ -47,17 +47,17 @@ body:before{
 .container{
   max-width:1100px;
   margin:auto;
-  padding:80px 24px;
+  padding:40px 24px;
 }
 
 /* HERO */
 .hero{
-  min-height:60vh;
+  min-height:auto;
   display:flex;
   flex-direction:column;
   justify-content:center;
   text-align:center;
-  padding:60px 24px;
+  padding:120px 24px 60px;
 }
 
 .title{
@@ -546,27 +546,28 @@ Completion. Return. The desert blooms. MAKTUB is fulfilled — it was written. T
 
 <style>
 @keyframes slide {
-  0%,18% {
+  0%,15%{
     transform:translateX(0%);
   }
-  20%,38% {
+  20%,35%{
     transform:translateX(-100%);
   }
-  40%,58% {
+  40%,55%{
     transform:translateX(-200%);
   }
-  60%,78% {
+  60%,75%{
     transform:translateX(-300%);
   }
-  80%,98% {
+  80%,95%{
     transform:translateX(-400%);
   }
-  100% {
+  100%{
     transform:translateX(0%);
   }
 }
+
 .animate-slide{
-  animation:slide 90s infinite linear;
+  animation:slide 90s infinite ease-in-out;
 }
 </style>
 
