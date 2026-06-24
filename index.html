@@ -52,7 +52,7 @@ body:before{
 
 /* HERO */
 .hero{
-  min-height:60vh;
+  min-height:70vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -251,12 +251,16 @@ audio{ width:60%; }
 }
 
 @media (max-width:768px){
+  .hero{
+    min-height:50vh;
+  }
   .track{
     grid-template-columns:1fr;
     gap:20px;
   }
   .title{
     font-size:42px;
+    line-height:1.2;
   }
   .player{
     flex-direction:column;
