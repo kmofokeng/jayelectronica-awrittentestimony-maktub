@@ -52,12 +52,8 @@ body:before{
 
 /* HERO */
 .hero{
-  min-height:auto;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  text-align:center;
-  padding:120px 24px 60px;
+  max-width:1100px;
+  margin:auto;
 }
 
 .title{
@@ -514,28 +510,28 @@ Completion. Return. The desert blooms. MAKTUB is fulfilled — it was written. T
   </div>
 
   <div class="relative overflow-hidden border border-[#C5A88033] rounded-3xl bg-[#050505]">
-    <div class="slideshow animate-slide">
-      <div class="w-1/5 flex-shrink-0 p-6">
+    <div class="flex w-[500%] animate-slide">
+      <div class="w-full flex-shrink-0 p-6">
         <img src="images/million-woman-march_04-10-2018.jpg"
              class="w-full h-[650px] object-contain rounded-2xl bg-black"
              draggable="false">
       </div>
-      <div class="w-1/5 flex-shrink-0 p-6">
+      <div class="w-full flex-shrink-0 p-6">
         <img src="images/winnie-mandela_minister-farrakhan_04-10-2018b.jpg"
              class="w-full h-[650px] object-contain rounded-2xl bg-black"
              draggable="false">
       </div>
-      <div class="w-1/5 flex-shrink-0 p-6">
+      <div class="w-full flex-shrink-0 p-6">
         <img src="images/winnie-mandela-04-10-2018c.jpg"
              class="w-full h-[650px] object-contain rounded-2xl bg-black"
              draggable="false">
       </div>
-      <div class="w-1/5 flex-shrink-0 p-6">
+      <div class="w-full flex-shrink-0 p-6">
         <img src="images/mlf-mandela-2-1.26.96-1.jpg"
              class="w-full h-[650px] object-contain rounded-2xl bg-black"
              draggable="false">
       </div>
-      <div class="w-1/5 flex-shrink-0 p-6">
+      <div class="w-full flex-shrink-0 p-6">
         <img src="images/HMLF-Mother-Khadijah-and-Winnie-Mandela-1024x687.jpg"
              class="w-full h-[650px] object-contain rounded-2xl bg-black"
              draggable="false">
@@ -549,18 +545,23 @@ Completion. Return. The desert blooms. MAKTUB is fulfilled — it was written. T
   0%,15%{
     transform:translateX(0%);
   }
+  
   20%,35%{
     transform:translateX(-100%);
   }
+  
   40%,55%{
     transform:translateX(-200%);
   }
+  
   60%,75%{
     transform:translateX(-300%);
   }
+  
   80%,95%{
     transform:translateX(-400%);
   }
+  
   100%{
     transform:translateX(0%);
   }
